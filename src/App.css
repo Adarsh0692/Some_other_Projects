@@ -7,3 +7,19 @@
   height: 6vh;
   font-size: larger;
 }
+.dropdown{
+  width: 30vw;
+  /* border: red 2px solid; */
+  text-align: center;
+  margin-left: 30%;
+  height: 30vh;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+.dropdown::-webkit-scrollbar{
+  display: none;
+}
+.dropList{
+  margin: 10px;
+}
