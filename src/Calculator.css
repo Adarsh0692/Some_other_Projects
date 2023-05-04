@@ -1,0 +1,23 @@
+.main_Box{
+    background-color: beige;
+    border: 5px solid black;
+    width: 40%;
+    top:50%;
+    margin: 0 auto;
+    text-align: center;
+    
+   
+}
+.btns{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: minmax(50px,auto);
+    
+    gap: 3px;
+    
+    
+}
+input{
+    width: 98%;
+    height: 50px;
+}
