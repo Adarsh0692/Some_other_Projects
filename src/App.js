@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import data from './data'
+import "./App.css"
+import ScoreSection from './Components/ScoreSection';
+import QuestionSection from './Components/Question';
+import NextBtn from './Components/Nextbtn';
+import AnswerSection from './Components/Answer';
+const App = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+  const [scrore, setScore] = useState(0);
+  const [answer, setAnswer] = useState(null);
+  const [correct, setCorrect] = useState(false);
 
-function App() {
+  const handelInputChange = (e, isCorrect) => {
+    setAnswer(e.target.value);
+    setCorrect(isCorrect);
+  }
+
+  const handelNextClick = () => {
+    if (correct) {
+      setScore(scrore + 1)
+      setCorrect(false)
+    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < data.length) {
+      setCurrentQuestion(nextQuestion)
+    } else {
+      setShowScore(true)
+    }
+  }
+
+  const handelTryAgain = () => {
+    setCurrentQuestion(0);
+    setShowScore(false);
+    setScore(0)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {
+        showScore ? (
+          <ScoreSection scrore={scrore} data={data} handelTryAgain={handelTryAgain} />
+        ) : (
+          <>
+            <QuestionSection currentQuestion={currentQuestion} data={data} />
+            <AnswerSection data={data} currentQuestion = {currentQuestion} answer={answer} handelInputChange={handelInputChange} />
+            <NextBtn data={data} currentQuestion={currentQuestion} handelNextClick={handelNextClick} />
+          </>
+        )
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
