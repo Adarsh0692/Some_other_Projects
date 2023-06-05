@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+}
+.wrapper{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #dfe6e9; */
+}
+.calender{
+    margin: auto;
+    width: 600px;
+    height: 500px;
+    background-color: #fff;
+    /* box-shadow: 0 0 15px 3px rgba(0,0,0,0.2); */
+}
+.dropdwon{
+    display: flex;
+    justify-content: space-around;
+}
+.months, .years{
+    margin-top: 20px;
+}
+.month, .year{
+    width: 13vw;
+    height: 7vh;
+    padding: 0 10px;
+    font-weight: 600;
+   
+}
+.weekends{
+    display: flex;
+    margin-top: 20px;
+    /* padding: 10px 0; */
+    border: 1px solid;
+}
+.weekends div{
+    width: 14%;
+    height: 8vh;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.days{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid;
+    
+}
+.days div{
+    width: 14%;
+    height: 8vh;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* .days div:hover{
+    background-color: green;
+    color: white;
+    
+} */
+.enter{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.inptDate input{
+    height: 40px;
+    padding: 0 10px;
+}
+.btn button{
+    height: 40px;
+    width: 10vw;
+    background-color: rgb(51, 51, 188);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.today{
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+.yellow{
+    background-color: yellow;
+    border-radius: 10px;
+}
